@@ -1,0 +1,320 @@
+[
+  {
+    "deal": {
+      "deal_id": 501,
+      "title": "Модернизация склада «Север»",
+      "stage_id": "PROPOSAL",
+      "stage_name": "Коммерческое предложение",
+      "amount_rub": "1450000.50",
+      "assigned_by_id": 21,
+      "assigned_by_name": "Анна Котова",
+      "last_activity_at": "2026-11-01T06:00:00Z",
+      "days_in_stage": 19,
+      "days_since_last_touch": 15,
+      "comments_history": [
+        "КП отправлено, без ответа. Клиент сравнивает варианты."
+      ],
+      "activities_history": [
+        {
+          "text": "Завершено обсуждение потребностей"
+        }
+      ]
+    },
+    "stage_age_days": 19,
+    "touch_age_days": 15,
+    "future_activity": false,
+    "cooldown_age_days": null,
+    "updated_at": "2026-11-01T06:00:00Z"
+  },
+  {
+    "deal": {
+      "deal_id": 502,
+      "title": "Сервисное обслуживание «Вектор»",
+      "stage_id": "CONTRACT",
+      "stage_name": "Согласование договора",
+      "amount_rub": "2300000",
+      "assigned_by_id": 22,
+      "assigned_by_name": "Павел Соколов",
+      "last_activity_at": "2026-11-01T06:00:00Z",
+      "days_in_stage": 28,
+      "days_since_last_touch": 16,
+      "comments_history": [
+        "Документы на согласовании у юристов."
+      ],
+      "activities_history": [
+        {
+          "text": "Завершено обсуждение потребностей"
+        }
+      ]
+    },
+    "stage_age_days": 28,
+    "touch_age_days": 16,
+    "future_activity": false,
+    "cooldown_age_days": null,
+    "updated_at": "2026-11-02T06:00:00Z"
+  },
+  {
+    "deal": {
+      "deal_id": 503,
+      "title": "Аудит логистики «Маяк»",
+      "stage_id": "QUALIFICATION",
+      "stage_name": "Квалификация",
+      "amount_rub": "580000",
+      "assigned_by_id": 23,
+      "assigned_by_name": "Мария Романова",
+      "last_activity_at": "2026-11-01T06:00:00Z",
+      "days_in_stage": 14,
+      "days_since_last_touch": 11,
+      "comments_history": [
+        "Первичный звонок завершён, письмо без ответа."
+      ],
+      "activities_history": [
+        {
+          "text": "Завершено обсуждение потребностей"
+        }
+      ]
+    },
+    "stage_age_days": 14,
+    "touch_age_days": 11,
+    "future_activity": false,
+    "cooldown_age_days": null,
+    "updated_at": "2026-11-03T06:00:00Z"
+  },
+  {
+    "deal": {
+      "deal_id": 504,
+      "title": "Терминалы сбора данных «Ритм»",
+      "stage_id": "PROPOSAL",
+      "stage_name": "Коммерческое предложение",
+      "amount_rub": "780000",
+      "assigned_by_id": 21,
+      "assigned_by_name": "Анна Котова",
+      "last_activity_at": "2026-11-01T06:00:00Z",
+      "days_in_stage": 3,
+      "days_since_last_touch": 2,
+      "comments_history": [
+        "КП получено, клиент собирает вопросы."
+      ],
+      "activities_history": [
+        {
+          "text": "Завершено обсуждение потребностей"
+        }
+      ]
+    },
+    "stage_age_days": 3,
+    "touch_age_days": 2,
+    "future_activity": false,
+    "cooldown_age_days": null,
+    "updated_at": "2026-11-04T06:00:00Z"
+  },
+  {
+    "deal": {
+      "deal_id": 505,
+      "title": "Интеграция ERP «Альта»",
+      "stage_id": "CONTRACT",
+      "stage_name": "Согласование договора",
+      "amount_rub": "3150000",
+      "assigned_by_id": 22,
+      "assigned_by_name": "Павел Соколов",
+      "last_activity_at": "2026-11-01T06:00:00Z",
+      "days_in_stage": 22,
+      "days_since_last_touch": 12,
+      "comments_history": [
+        "Договор на согласовании."
+      ],
+      "activities_history": [
+        {
+          "text": "Завершено обсуждение потребностей"
+        }
+      ]
+    },
+    "stage_age_days": 22,
+    "touch_age_days": 12,
+    "future_activity": true,
+    "cooldown_age_days": null,
+    "updated_at": "2026-11-05T06:00:00Z"
+  },
+  {
+    "deal": {
+      "deal_id": 506,
+      "title": "Комплектация филиала «Орион»",
+      "stage_id": "PROPOSAL",
+      "stage_name": "Коммерческое предложение",
+      "amount_rub": "890000",
+      "assigned_by_id": 23,
+      "assigned_by_name": "Мария Романова",
+      "last_activity_at": "2026-11-01T06:00:00Z",
+      "days_in_stage": 21,
+      "days_since_last_touch": 17,
+      "comments_history": [
+        "КП без ответа."
+      ],
+      "activities_history": [
+        {
+          "text": "Завершено обсуждение потребностей"
+        }
+      ]
+    },
+    "stage_age_days": 21,
+    "touch_age_days": 17,
+    "future_activity": false,
+    "cooldown_age_days": 3,
+    "updated_at": "2026-11-06T06:00:00Z"
+  },
+  {
+    "deal": {
+      "deal_id": 507,
+      "title": "Обучение команды «Контур»",
+      "stage_id": "QUALIFICATION",
+      "stage_name": "Квалификация",
+      "amount_rub": "240000",
+      "assigned_by_id": 21,
+      "assigned_by_name": "Анна Котова",
+      "last_activity_at": "2026-11-01T06:00:00Z",
+      "days_in_stage": 9,
+      "days_since_last_touch": 8,
+      "comments_history": [
+        "Клиент просил больше не связываться."
+      ],
+      "activities_history": [
+        {
+          "text": "Завершено обсуждение потребностей"
+        }
+      ]
+    },
+    "stage_age_days": 9,
+    "touch_age_days": 8,
+    "future_activity": false,
+    "cooldown_age_days": null,
+    "updated_at": "2026-11-07T06:00:00Z"
+  },
+  {
+    "deal": {
+      "deal_id": 508,
+      "title": "Снабжение площадки «Кедр»",
+      "stage_id": "CONTRACT",
+      "stage_name": "Согласование договора",
+      "amount_rub": "4900000",
+      "assigned_by_id": 22,
+      "assigned_by_name": "Павел Соколов",
+      "last_activity_at": "2026-11-01T06:00:00Z",
+      "days_in_stage": 10,
+      "days_since_last_touch": 5,
+      "comments_history": [
+        "Договор на согласовании."
+      ],
+      "activities_history": [
+        {
+          "text": "Завершено обсуждение потребностей"
+        }
+      ]
+    },
+    "stage_age_days": 10,
+    "touch_age_days": 5,
+    "future_activity": false,
+    "cooldown_age_days": null,
+    "updated_at": "2026-11-08T06:00:00Z"
+  },
+  {
+    "deal": {
+      "deal_id": 509,
+      "title": "Резервное копирование «Гранит»",
+      "stage_id": "PROPOSAL",
+      "stage_name": "Коммерческое предложение",
+      "amount_rub": "1265000",
+      "assigned_by_id": 23,
+      "assigned_by_name": "Мария Романова",
+      "last_activity_at": "2026-11-01T06:00:00Z",
+      "days_in_stage": 17,
+      "days_since_last_touch": 14,
+      "comments_history": [
+        "Бюджет отложен до обсуждения с финдиректором."
+      ],
+      "activities_history": [
+        {
+          "text": "Завершено обсуждение потребностей"
+        }
+      ]
+    },
+    "stage_age_days": 17,
+    "touch_age_days": 14,
+    "future_activity": false,
+    "cooldown_age_days": null,
+    "updated_at": "2026-11-09T06:00:00Z"
+  },
+  {
+    "deal": {
+      "deal_id": 510,
+      "title": "Система контроля качества «Спектр»",
+      "stage_id": "PROPOSAL",
+      "stage_name": "Коммерческое предложение",
+      "amount_rub": "1810000",
+      "assigned_by_id": 21,
+      "assigned_by_name": "Анна Котова",
+      "last_activity_at": "2026-11-01T06:00:00Z",
+      "days_in_stage": 20,
+      "days_since_last_touch": 18,
+      "comments_history": [],
+      "activities_history": []
+    },
+    "stage_age_days": 20,
+    "touch_age_days": 18,
+    "future_activity": false,
+    "cooldown_age_days": null,
+    "updated_at": "2026-11-10T06:00:00Z"
+  },
+  {
+    "deal": {
+      "deal_id": 511,
+      "title": "Оснащение офиса «Линия»",
+      "stage_id": "QUALIFICATION",
+      "stage_name": "Квалификация",
+      "amount_rub": "320000",
+      "assigned_by_id": 22,
+      "assigned_by_name": "Павел Соколов",
+      "last_activity_at": "2026-11-01T06:00:00Z",
+      "days_in_stage": 2,
+      "days_since_last_touch": 1,
+      "comments_history": [
+        "Обсудили цели. Клиент собирает вводные."
+      ],
+      "activities_history": [
+        {
+          "text": "Завершено обсуждение потребностей"
+        }
+      ]
+    },
+    "stage_age_days": 2,
+    "touch_age_days": 1,
+    "future_activity": false,
+    "cooldown_age_days": null,
+    "updated_at": "2026-11-11T06:00:00Z"
+  },
+  {
+    "deal": {
+      "deal_id": 512,
+      "title": "Инвентаризация сети «Форвард»",
+      "stage_id": "CONTRACT",
+      "stage_name": "Согласование договора",
+      "amount_rub": "720000",
+      "assigned_by_id": 23,
+      "assigned_by_name": "Мария Романова",
+      "last_activity_at": "2026-11-01T06:00:00Z",
+      "days_in_stage": 13,
+      "days_since_last_touch": 7,
+      "comments_history": [
+        "Договор на согласовании у закупок."
+      ],
+      "activities_history": [
+        {
+          "text": "Завершено обсуждение потребностей"
+        }
+      ]
+    },
+    "stage_age_days": 13,
+    "touch_age_days": 7,
+    "future_activity": false,
+    "cooldown_age_days": null,
+    "updated_at": "2026-11-12T06:00:00Z"
+  }
+]

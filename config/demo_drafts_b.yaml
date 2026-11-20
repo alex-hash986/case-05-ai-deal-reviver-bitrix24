@@ -1,0 +1,25 @@
+no_response:
+  stall_reason_category: no_response
+  stall_summary: В истории отмечено отсутствие ответа после последнего обращения.
+  draft_message: Добрый день! Возвращаюсь к теме «{artifact}». Какой вопрос по ней полезнее разобрать вместе, чтобы выбрать следующий шаг?
+  next_best_action: Уточнить, актуально ли продолжить обсуждение.
+internal_review:
+  stall_reason_category: internal_review
+  stall_summary: В истории отмечено внутреннее согласование.
+  draft_message: Добрый день! Возвращаюсь к теме «{artifact}». Какой вопрос по ней полезнее разобрать вместе, чтобы выбрать следующий шаг?
+  next_best_action: Собрать вопросы участников согласования.
+budget:
+  stall_reason_category: budget
+  stall_summary: В истории обсуждался бюджет проекта.
+  draft_message: Добрый день! Возвращаюсь к теме «{artifact}». Какой вопрос по ней полезнее разобрать вместе, чтобы выбрать следующий шаг?
+  next_best_action: Сверить приоритет проекта с заказчиком.
+negative:
+  stall_reason_category: negative
+  stall_summary: Клиент попросил прекратить обращения.
+  draft_message: Добрый день.
+  next_best_action: Зафиксировать отказ от обращений.
+unknown:
+  stall_reason_category: unknown
+  stall_summary: История сделки не даёт однозначной причины паузы.
+  draft_message: Добрый день! Возвращаюсь к теме «{artifact}». Какой вопрос по ней полезнее разобрать вместе, чтобы выбрать следующий шаг?
+  next_best_action: Уточнить актуальность запроса.

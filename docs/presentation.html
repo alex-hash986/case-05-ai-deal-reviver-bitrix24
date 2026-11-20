@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Кейс №5 · AI Deal Reviver для Bitrix24</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f7ef;
+      --ink: #151f1d;
+      --deep: #102c25;
+      --green: #176048;
+      --lime: #d6f58a;
+      --line: #cad7ce;
+      --muted: #405752;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 1rem/1.55 system-ui, sans-serif; }
+    .wrap { width: min(1100px, 92%); margin-inline: auto; }
+    header { background: var(--deep); color: #f4fff6; }
+    nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; padding-block: 1.25rem; border-bottom: 1px solid #54736a; }
+    nav a:first-child { margin-right: auto; font-weight: 750; }
+    a { color: inherit; text-underline-offset: .22em; }
+    :focus-visible { outline: 3px solid #b46a1f; outline-offset: 4px; }
+    .hero { padding-block: clamp(3rem, 8vw, 7rem); }
+    h1, h2, h3, p { margin: 0 0 .65em; }
+    h1, h2 { line-height: 1.07; letter-spacing: -.045em; }
+    h1 { max-width: 15ch; font-size: clamp(2.5rem, 7.5vw, 6.4rem); }
+    h2 { font-size: clamp(1.85rem, 4.5vw, 3.35rem); }
+    .hero p { color: #def0e4; max-width: 60ch; font-size: clamp(1.05rem, 2.5vw, 1.35rem); }
+    .hero a { display: inline-block; margin-top: .75rem; background: var(--lime); color: var(--deep); }
+    section { padding-block: clamp(2.5rem, 6vw, 5rem); border-bottom: 1px solid var(--line); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 1rem; }
+    .card { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.2rem; }
+    .card > :last-child { margin-bottom: 0; }
+    .muted { color: var(--muted); max-width: 76ch; }
+    .scroll { overflow: auto; background: white; border: 1px solid var(--line); border-radius: 12px; margin-block: 1rem; }
+    table { width: 100%; border-collapse: collapse; text-align: left; }
+    th, td { padding: .7rem 1rem; border-bottom: 1px solid var(--line); }
+    thead { background: #e7efe4; }
+    tbody tr:last-child > * { border-bottom: 0; }
+    .demo { max-width: 75ch; }
+    .actions { display: flex; gap: .6rem; flex-wrap: wrap; margin-block: 1rem; }
+    button, .hero a { border: 1px solid transparent; border-radius: 7px; padding: .55rem .9rem; font: inherit; font-weight: 700; }
+    button { background: var(--green); color: white; cursor: pointer; }
+    button + button { background: white; color: var(--green); border-color: var(--line); }
+    button:disabled { opacity: .55; cursor: default; }
+    .roi { display: grid; grid-template-columns: 1.1fr 1fr; gap: 1rem; align-items: start; }
+    fieldset { margin: 0 0 .7rem; min-width: 0; border: 1px solid var(--line); border-radius: 8px; padding: .7rem; }
+    legend { font-weight: 700; padding-inline: .35rem; }
+    .fields, .results { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+    label { display: grid; grid-template-rows: 1fr auto; gap: .35rem; font-weight: 600; }
+    input { width: 100%; min-width: 0; border: 1px solid #81978e; border-radius: 6px; padding: .45em; font: inherit; }
+    .results .card:last-child { grid-column: 1/-1; background: #e7efe4; }
+    output { display: block; font-size: clamp(1.2rem, 3vw, 1.75rem); font-weight: 800; color: var(--green); overflow-wrap: anywhere; }
+    .note { margin-top: 1rem; }
+    @media (max-width: 720px) { .roi { grid-template-columns: 1fr; } nav a:first-child { width: 100%; } }
+    @media (max-width: 390px) { .fields, .results { grid-template-columns: 1fr; } th, td { padding: .5rem; } }
+    @media print { header { background: white; color: var(--ink); } .hero p { color: var(--ink); } nav, .actions, .hero a { display: none; } .hero, section { padding-block: 1rem; } .card, table { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <header id="top">
+    <div class="wrap">
+      <nav aria-label="Разделы презентации">
+        <a href="#top">Кейс №5 · Bitrix24</a>
+        <a href="#pain">Воронка</a>
+        <a href="#architecture">Архитектура</a>
+        <a href="#benchmark">A/B</a>
+        <a href="#approval">Одобрение</a>
+        <a href="#roi">ROI</a>
+      </nav>
+      <div class="hero">
+        <h1>Возвращайте зависшие B2B-сделки в работу</h1>
+        <p>Reviver находит паузы в воронке Bitrix24, оценивает риск выручки и даёт менеджеру черновик следующего касания.</p>
+        <a href="#roi">Рассчитать сценарий окупаемости</a>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section id="pain">
+      <h2>Паузы в сделках искажают прогноз</h2>
+      <div class="grid">
+        <article class="card"><h3>Руководитель продаж</h3><p>Видит, какие суммы связаны с просроченными стадиями и требуют проверки прогноза.</p></article>
+        <article class="card"><h3>Менеджер сделки</h3><p>Получает причину паузы, контекст из истории и готовый черновик для проверки.</p></article>
+      </div>
+    </section>
+    <section id="architecture">
+      <h2>От курсора до задачи менеджеру</h2>
+      <div class="grid">
+        <article class="card"><h3>Отбор</h3><p>SQLite WAL хранит курсор «дата изменения + ID». SLA стадии, будущие дела, cooldown и отказ клиента определяют, какие карточки пропускать.</p></article>
+        <article class="card"><h3>Оценка и черновик</h3><p>Decimal-скоринг считает риск и прогноз. LLM формирует касание, а CommercialPolicyGuard проверяет обещания. При нехватке данных требуется ручной разбор.</p></article>
+        <article class="card"><h3>Подтверждение и сверка</h3><p>API проверяет токен и полномочия. После одобрения менеджер получает задачу в CRM. После неоднозначного ответа reconcile сверяет квитанции в <code>bitrix_steps</code>.</p></article>
+      </div>
+    </section>
+    <section id="benchmark">
+      <h2>Две стратегии касания</h2>
+      <p class="muted">Исходный mock-бенчмарк на 60 синтетических сделках. Задержка включает локальную обработку и сохранение.</p>
+      <div class="scroll" role="region" aria-label="Сравнение вариантов A и B" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Метрика</th><th scope="col">A · v1.0</th><th scope="col">B · v1.1</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Касание</th><td>Открытый вопрос</td><td>Фоллоу-ап по материалу</td></tr>
+            <tr><th scope="row">Точность отбора / причины</th><td>100% / 100%</td><td>100% / 100%</td></tr>
+            <tr><th scope="row">Контрольные исключения</th><td>24/24</td><td>24/24</td></tr>
+            <tr><th scope="row">Неподтверждённые предложения</th><td>0/36</td><td>0/36</td></tr>
+            <tr><th scope="row">p50 / p95, мс</th><td>24,480 / 28,221</td><td>24,413 / 129,939</td></tr>
+            <tr><th scope="row">Средняя стоимость цикла</th><td>0,00 ₽</td><td>0,00 ₽</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted"><strong>Live LLM на том же корпусе.</strong> Вариант B точнее отбирал сделки и чаще выпускал черновики. Ошибки модели требуют разбора перед CRM-пилотом.</p>
+      <div class="scroll" role="region" aria-label="Результаты live LLM" tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Метрика live</th><th scope="col">A · v1.0</th><th scope="col">B · v1.1</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Точность отбора / причины</th><td>50,0% / 34,8%</td><td>71,7% / 41,3%</td></tr>
+            <tr><th scope="row">Неподтверждённые предложения</th><td>0/6</td><td>0/19</td></tr>
+            <tr><th scope="row">Ошибки llm_unavailable</th><td>30</td><td>14</td></tr>
+            <tr><th scope="row">p50 / p95, с</th><td>1,766 / 2,580</td><td>1,708 / 3,531</td></tr>
+            <tr><th scope="row">Стоимость 60 циклов</th><td>0,35 ₽</td><td>0,40 ₽</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted">Прирост закрытой выручки измеряется на пилоте с контрольной группой.</p>
+    </section>
+    <section id="approval">
+      <h2>Одобрение касания в Bitrix24</h2>
+      <p class="muted">Интерактивная имитация очереди. В live решение передаётся API с токеном менеджера и проверкой текущего ответственного или полномочий РОП.</p>
+      <article class="card demo">
+        <h3>Согласование интеграции</h3>
+        <p><strong>Черновик.</strong> «Подскажите, удалось ли обсудить схему интеграции? Какой вопрос стоит разобрать на следующей встрече?»</p>
+        <div class="actions">
+          <button id="approve" type="button">Одобрить касание</button>
+          <button id="reject" type="button">Отклонить</button>
+          <button id="reset-demo" type="button" disabled>Сбросить</button>
+        </div>
+        <p id="approval-status" role="status">Сводка в таймлайне. Черновик ожидает решения.</p>
+      </article>
+    </section>
+    <section id="roi">
+      <h2>Калькулятор окупаемости</h2>
+      <p class="muted">Введите данные за один период. Дополнительная конверсия — разница долей оплаченных сделок между пилотом и контролем. Начальные значения иллюстрируют формулу. Подставьте измеренную стоимость цикла и затраты на эксплуатацию.</p>
+      <div class="roi">
+        <form id="calculator" class="card">
+          <fieldset>
+            <legend>Воронка</legend>
+            <div class="fields">
+              <label>Активные сделки <input id="deals" name="deals" type="number" min="0" step="1" value="100" required></label>
+              <label>Средний чек, ₽ <input id="ticket" name="ticket" type="number" min="0" step="any" value="500000" required></label>
+              <label>Доля зависших, % <input id="stalled" name="stalled" type="number" min="0" max="100" step="any" value="20" required></label>
+              <label>Доп. конверсия, п. п. <input id="conversion" name="conversion" type="number" min="0" max="100" step="any" value="5" required></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Маржа и затраты</legend>
+            <div class="fields">
+              <label>Валовая маржа, % <input id="margin" name="margin" type="number" min="0" max="100" step="any" value="30" required></label>
+              <label>Средняя стоимость AI-цикла, ₽ <input id="cycle" name="cycle" type="number" min="0" step="any" value="0" required></label>
+              <label>Циклы на зависшую сделку <input id="cycles" name="cycles" type="number" min="0" step="any" value="1" required></label>
+              <label>Остальные затраты, ₽ <input id="overhead" name="overhead" type="number" min="0" step="any" value="0" required></label>
+              <label>Экономия труда, ₽ <input id="savings" name="savings" type="number" min="0" step="any" value="0" required></label>
+            </div>
+          </fieldset>
+        </form>
+        <div>
+          <div class="results" aria-label="Расчёт за период">
+            <div class="card">Выручка под риском <output id="risk" form="calculator" for="deals ticket stalled">—</output></div>
+            <div class="card">Ожидаемая возвращённая выручка <output id="revenue" form="calculator" for="deals ticket stalled conversion">—</output></div>
+            <div class="card">Затраты AI <output id="ai" form="calculator" for="deals stalled cycle cycles">—</output></div>
+            <div class="card">Чистый эффект <output id="net" form="calculator" for="deals ticket stalled conversion margin cycle cycles overhead savings">—</output></div>
+            <div class="card">ROI от полной стоимости владения <output id="roi-value" form="calculator" for="deals ticket stalled conversion margin cycle cycles overhead savings">—</output></div>
+          </div>
+          <p class="muted note" id="calculator-note" role="status"></p>
+          <noscript><p>Включите JavaScript, чтобы рассчитать сценарий.</p></noscript>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    "use strict";
+    const approve = document.getElementById("approve");
+    const reject = document.getElementById("reject");
+    const reset = document.getElementById("reset-demo");
+    const status = document.getElementById("approval-status");
+
+    function showDecision(decision, message) {
+      approve.disabled = reject.disabled = decision;
+      reset.disabled = !decision;
+      status.textContent = message;
+    }
+
+    approve.addEventListener("click", () => showDecision(true, "Одобрено. Создана задача менеджеру с привязкой к сделке."));
+    reject.addEventListener("click", () => showDecision(true, "Отклонено. Карточка закрыта, касание отменено."));
+    reset.addEventListener("click", () => showDecision(false, "Сводка в таймлайне. Черновик ожидает решения."));
+
+    const calculator = document.getElementById("calculator");
+    const note = document.getElementById("calculator-note");
+    const inputs = Array.from(calculator.querySelectorAll("input"));
+    const outputs = ["risk", "revenue", "ai", "net", "roi-value"].map(id => document.getElementById(id));
+    const rubles = new Intl.NumberFormat("ru-RU", { style: "currency", currency: "RUB", maximumFractionDigits: 2 });
+    const percent = new Intl.NumberFormat("ru-RU", { style: "percent", maximumFractionDigits: 1 });
+
+    function calculate() {
+      const values = Object.fromEntries(inputs.map(input => [input.name, input.valueAsNumber]));
+      const stalledDeals = values.deals * values.stalled / 100;
+      const risk = stalledDeals * values.ticket;
+      const revenue = risk * values.conversion / 100;
+      const ai = stalledDeals * values.cycle * values.cycles;
+      const total = ai + values.overhead;
+      const net = revenue * values.margin / 100 + values.savings - total;
+      const roi = total > 0 ? net / total : null;
+      const valid = inputs.every(input => input.validity.valid)
+        && [risk, revenue, ai, net, total, roi ?? 0].every(Number.isFinite);
+      const display = [rubles.format(risk), rubles.format(revenue), rubles.format(ai), rubles.format(net),
+        roi === null ? "—" : percent.format(roi)];
+      outputs.forEach((output, index) => { output.value = valid ? display[index] : "—"; });
+      note.textContent = valid
+        ? (total ? "Полная стоимость владения за период — " + rubles.format(total) : "Укажите затраты, чтобы получить ROI в процентах.")
+        : "Проверьте поля. Суммы должны быть конечными, а доли — от 0 до 100.";
+    }
+
+    calculator.addEventListener("input", calculate);
+    calculator.addEventListener("submit", event => event.preventDefault());
+    calculate();
+  </script>
+</body>
+</html>

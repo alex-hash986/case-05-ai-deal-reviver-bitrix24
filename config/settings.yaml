@@ -1,0 +1,6 @@
+api_port: 8015
+ui_port: 8505
+database_path: data/case05_deal_reviver.db
+revival_cooldown_days: 14
+bitrix_mode: mock
+llm_mode: mock

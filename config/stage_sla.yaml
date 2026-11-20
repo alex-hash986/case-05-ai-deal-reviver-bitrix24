@@ -1,0 +1,3 @@
+PROPOSAL: {days: 7, base_probability: '0.35'}
+CONTRACT: {days: 10, base_probability: '0.50'}
+QUALIFICATION: {days: 4, base_probability: '0.25'}
